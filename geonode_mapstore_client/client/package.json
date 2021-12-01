@@ -1,0 +1,50 @@
+{
+  "name": "geonode-mapstore-client",
+  "version": "2.0.9",
+  "description": "MapStore 2 Api bundle specific to geonode framework",
+  "main": "api.js",
+  "eslintConfig": {
+    "extends": [
+      "@mapstore/eslint-config-mapstore"
+    ],
+    "parserOptions": {
+      "babelOptions": {
+        "configFile": "./node_modules/mapstore/build/babel.config.js"
+      }
+    },
+    "globals": {
+      "__MAPSTORE_PROJECT_CONFIG__": false
+    }
+  },
+  "scripts": {
+    "compile": "mapstore-project compile geonode && node postCompile",
+    "start": "mapstore-project start geonode",
+    "test": "mapstore-project test geonode",
+    "test:watch": "mapstore-project test:watch geonode",
+    "update-project": "mapstore-project update geonode",
+    "lint": "eslint js --ext .jsx,.js"
+  },
+  "author": "GeoSolutions",
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "@mapstore/project": "1.0.7"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "5.15.1",
+    "bootstrap-v4": "npm:bootstrap@4.5.0",
+    "dompurify": "2.2.6",
+    "js-cookie": "2.2.1",
+    "mapstore": "file:MapStore2",
+    "react-bootstrap-v1": "npm:react-bootstrap@1.3.0",
+    "redux-devtools": "^3.7.0",
+    "redux-devtools-dock-monitor": "^1.2.0",
+    "redux-devtools-log-monitor": "^2.1.0"
+  },
+  "geonode": {
+    "devServer": {
+      "host": "localhost",
+      "proxyTargetHost": "localhost:80",
+      "protocol": "http"
+    }
+  }
+}
